@@ -3,6 +3,8 @@ import { fetchDataSimulator } from "./api";
 
 const Cat = () => {
   const [catMsg, setCatMessage] = useState("");
+
+  // Example of side effect and cleaning it after component unmount
   
   useEffect(() => {
     const fetchData = async () => {
@@ -21,7 +23,8 @@ const Cat = () => {
       console.log("I`m crazy and i will break your code");
     }, []);
 
-  // DON'T YOU DARE DO THAT!
+  // DON'T YOU DARE DO THAT! 
+  // Causes an infinite rerender, because of changing the state, which its depends on inside useEffect
 
     // useEffect(() => {
     //   setCatMessage("hello");

@@ -8,6 +8,12 @@ import Cat from "./Cat";
 function App() {
   const [count, setCount] = useState(0);
 
+  // Example of trigger some actions depend on state changes
+  // Be careful if you change the state, useEffect depends on
+  // you should at least have some limitation, to avoid infinite rerender
+
+  // N.B. Cleaning function also be called when dependency changes
+
   useEffect(() => {
     if (count > 5) {
       setCount(0);
