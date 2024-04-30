@@ -1,30 +1,22 @@
-# React + TypeScript + Vite
+## useEffect(callback, [, dependency]) -  Hook for handling side-effects
+useEffect is called when function renders, but itself it's not causing the re-render
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Use cases
+- When component renders the first time
+- When component changes and we need to make some side-effect
+- Clean up some data
 
-Currently, two official plugins are available:
+### Main code structure
+ - `./src/App.tsx` - Counter logic
+ - `./src/Cat.tsx` - Cat messages change logic
+ - `./src/api.ts` - 'fetching data' function
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+ ### How to setup project
+ `git clone https://github.com/asya982/UseEffect-use-cases.git`
+ `cd UseEffect-use-cases`
+ `npm install`
+ `npm run dev`
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+ ### Useful information about useEffect
+ [best practice](https://dmitripavlutin.com/react-useeffect-explanation/#5-useeffect-in-practice)
+ [A Complete Guide to useEffect](https://overreacted.io/a-complete-guide-to-useeffect/)
